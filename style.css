@@ -222,7 +222,163 @@ p {
     color: #b2bec3;
     font-weight: 600;
 }
+/* why choose*/
+/* Color Variables for the Bento Section */
+:root {
+    --card-bg: #1a0b38; /* Deep purple card color from your image */
+    --accent-gradient: linear-gradient(135deg, #ff00ff, #7000ff);
+    --text-gray: #b2bec3;
+}
 
+.why-choose {
+    padding: 80px 10%;
+    background-color: #0a031a;
+}
+
+.main-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.bento-grid {
+    display: grid;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Map of the layout: 3 columns wide */
+    grid-template-areas: 
+        "audio mobile mobile"
+        "audio community community"
+        "interviews interviews resources";
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+/* Assigning the Cards to the Map */
+.card-audio { grid-area: audio; }
+.card-mobile { grid-area: mobile; }
+.card-community { grid-area: community; }
+.card-interviews { grid-area: interviews; }
+.card-resources { grid-area: resources; }
+
+/* Card Styling to match the image */
+.card {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.icon-gradient {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0; /* Override your global p margin */
+    text-align: left;
+}
+
+/* --- RESPONSIVENESS --- */
+
+/* For Tablets/Laptops */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-areas: 
+            "audio mobile"
+            "audio community"
+            "interviews interviews"
+            "resources resources";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    .why-choose { padding: 40px 20px; }
+    .bento-grid {
+        grid-template-areas: 
+            "audio"
+            "mobile"
+            "community"
+            "interviews"
+            "resources";
+        grid-template-columns: 1fr;
+    }
+    
+    .card { padding: 25px; }
+}
+
+
+
+/* Footer Styling */
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    --text-gray: #b2bec3;
+}
+
+.footer-logo { height: 40px; margin-bottom: 30px; }
+
+.social-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover { color: white; }
+/* Notes section*/
+.Notes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding-top: 40px;
+}
+.Notes .card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+}
+.card-container img{
+    background-color: red;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
 
 
 
