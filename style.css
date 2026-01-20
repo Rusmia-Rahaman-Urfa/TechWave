@@ -11,7 +11,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #090979;
+    background-color: #220e49;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 20px;
@@ -222,10 +222,9 @@ p {
     color: #b2bec3;
     font-weight: 600;
 }
-/* why choose*/
-/* Color Variables for the Bento Section */
+/* why choose section*/
 :root {
-    --card-bg: #1a0b38; /* Deep purple card color from your image */
+    --card-bg: #1a0b38; 
     --accent-gradient: linear-gradient(135deg, #ff00ff, #7000ff);
     --text-gray: #b2bec3;
 }
@@ -248,7 +247,6 @@ p {
     gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
-    /* Map of the layout: 3 columns wide */
     grid-template-areas: 
         "audio mobile mobile"
         "audio community community"
@@ -257,14 +255,22 @@ p {
     grid-template-rows: auto auto auto;
 }
 
-/* Assigning the Cards to the Map */
-.card-audio { grid-area: audio; }
-.card-mobile { grid-area: mobile; }
-.card-community { grid-area: community; }
-.card-interviews { grid-area: interviews; }
-.card-resources { grid-area: resources; }
+.card-audio { 
+    grid-area: audio;
+ }
+.card-mobile {
+    grid-area: mobile;
+ }
+.card-community {
+    grid-area: community;
+ }
+.card-interviews {
+    grid-area: interviews;
+ }
+.card-resources {
+    grid-area: resources;
+ }
 
-/* Card Styling to match the image */
 .card {
     background-color: var(--card-bg);
     padding: 35px;
@@ -294,11 +300,9 @@ p {
     color: var(--text-gray);
     line-height: 1.6;
     font-size: 0.95rem;
-    margin: 0; /* Override your global p margin */
+    margin: 0; 
     text-align: left;
 }
-
-/* --- RESPONSIVENESS --- */
 
 /* For Tablets/Laptops */
 @media (max-width: 1024px) {
@@ -314,7 +318,9 @@ p {
 
 /* For Mobile Phones */
 @media (max-width: 768px) {
-    .why-choose { padding: 40px 20px; }
+    .why-choose {
+        padding: 40px 20px;
+     }
     .bento-grid {
         grid-template-areas: 
             "audio"
@@ -328,9 +334,7 @@ p {
     .card { padding: 25px; }
 }
 
-
-
-/* Footer Styling */
+/* Footer*/
 footer {
     padding: 60px 20px;
     text-align: center;
@@ -338,7 +342,9 @@ footer {
     --text-gray: #b2bec3;
 }
 
-.footer-logo { height: 40px; margin-bottom: 30px; }
+.footer-logo {
+    height: 40px; margin-bottom: 30px;
+ }
 
 .social-links {
     margin-bottom: 20px;
@@ -353,31 +359,195 @@ footer {
     font-size: 0.9rem;
 }
 
-.social-links a:hover { color: white; }
-/* Notes section*/
-.Notes{
-    display: flex;
-    flex-direction: column;
+.social-links a:hover {
+    color: white;
+ }
+ /* Episodes */
+ /* Section Titles */
+.section-title {
     text-align: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid white;
-    padding-top: 40px;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
 }
-.Notes .card-container{
+
+/* FEATURED EPISODES STYLES */
+.episodes-section {
+    padding: 80px 70px;
+    background-color: #0a031a;
+}
+
+.episodes-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.card-container img{
-    background-color: red;
+
+.episode-card {
+    background: #1a0b38;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-10px);
+}
+
+.episode-image {
+    position: relative;
+    height: 200px;
+    background: #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.episode-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff00ff, #7000ff);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.episode-info {
+    padding: 25px;
+}
+
+.episode-info h3 {
+    color: white;
     margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.episode-info p {
+    color: #b2bec3;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.episode-meta {
+    color: #00ff88;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* MEET THE HOST STYLES */
+.host-section {
+    padding: 80px 70px;
+    background-color: #0a031a;
+}
+
+.host-card {
+    background: #1a0b38;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.host-image-container {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #ff00ff, #7000ff);
+}
+
+.host-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1a0b38;
+}
+
+.host-details h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.host-details p {
+    color: #b2bec3;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ff00ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    background: #ff00ff;
+    color: white;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .episodes-section, .host-section {
+        padding: 50px 20px;
+    }
+
+    .host-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.episode-image iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    top: 0;
+    left:0;
 }
 
 
